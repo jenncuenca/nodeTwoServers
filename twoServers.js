@@ -13,14 +13,14 @@ function handleRequest(request, response) {
   response.end("It Works!! Path Hit: " + request.url);
 }
 
-// Use the Node HTTP package to create our server.
+// SERVER 1 VARIABLE
 var server1 = http.createServer(handleRequest);
 
-// Start our server so that it can begin listening to client requests.
+// LISTENS TO SERVER 1
 server1.listen(PORT1, function() {
 
   // Log (server-side) when our server has started
-  console.log("Server 1 listening on: http://localhost:" + PORT);
+  console.log("Server 1 listening on: http://localhost:" + PORT1);
 });
 
 // ===== SERVER 2 ===== //
@@ -30,12 +30,12 @@ function handleRequest(request, response) {
     response.end("It Works!! Path Hit: " + request.url);
   }
   
-  // Use the Node HTTP package to create our server.
+  // SERVER 2 VARIABLE
   var server2 = http.createServer(handleRequest);
   
-  // Start our server so that it can begin listening to client requests.
+  // LISTENS TO SERVER 2
   server2.listen(PORT2, function() {
   
     // Log (server-side) when our server has started
-    console.log("Server 2 listening on: http://localhost:" + PORT);
+    console.log("Server 2 listening on: http://localhost:" + PORT2);
   });
