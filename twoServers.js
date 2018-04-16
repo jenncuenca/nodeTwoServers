@@ -1,20 +1,21 @@
 // Require/import the HTTP module
 var http = require("http");
 
-// Define a port to listen for incoming requests
+// PORT VARIABLES
 var PORT1 = 7000;
 var PORT2 = 7500;
 
+//SERVER VARIABLES 
+var server1 = http.createServer(handleRequest);
+var server2 = http.createServer(handleRequest);
 
-// ===== SERVER 1 ===== //
+
+// ** ===== SERVER 1 ===== ** //
 function handleRequest(request, response) {
 
   // Send the below string to the client when the user visits the PORT URL
-  response.end("It Works!! Path Hit: " + request.url);
+  response.end("It Works!! Path Hit: " + request.url + "YOU ROCK!");
 }
-
-// SERVER 1 VARIABLE
-var server1 = http.createServer(handleRequest);
 
 // LISTENS TO SERVER 1
 server1.listen(PORT1, function() {
@@ -23,16 +24,13 @@ server1.listen(PORT1, function() {
   console.log("Server 1 listening on: http://localhost:" + PORT1);
 });
 
-// ===== SERVER 2 ===== //
+// ** ===== SERVER 2 ===== ** //
 function handleRequest(request, response) {
 
     // Send the below string to the client when the user visits the PORT URL
-    response.end("It Works!! Path Hit: " + request.url);
+    response.end("It Works!! Path Hit: " + request.url + "YOU LUCKED OUT");
   }
-  
-  // SERVER 2 VARIABLE
-  var server2 = http.createServer(handleRequest);
-  
+
   // LISTENS TO SERVER 2
   server2.listen(PORT2, function() {
   
